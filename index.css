@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Import Montserrat from Google Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap');
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @apply bg-neutral-950 text-white;
+  }
+}
+
+@layer utilities {
+  .animate-flow-slow {
+    animation: flow 10s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes flow {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate(10%, 5%) scale(1.1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(-5%, 10%) scale(0.95);
+    opacity: 0.2;
+  }
+}
+
+/* Custom Scrollbar Hide */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
